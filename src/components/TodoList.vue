@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import TaskBoard from "./TaskBoard.vue";
-import sendImg from "/src/assets/images/send.png";
 
 // ADD A UNIQUE ID
 function generateId() {
@@ -37,7 +36,7 @@ function deleteTask(index) {
       <form @submit.prevent="addTask" class="form">
         <input v-model="newTask" type="text" placeholder="New task" />
         <button type="submit">
-          <img :src="sendImg" alt="Send" />
+          <img src="./send.png" alt="send" />
         </button>
       </form>
     </TaskBoard>

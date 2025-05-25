@@ -1,7 +1,5 @@
 <script setup>
 import { ref, computed, onMounted, nextTick, watch } from "vue";
-import logoImg from "/src/assets/images/Logo.png";
-import brushImg from "/src/assets/images/brush.png";
 
 const props = defineProps({
   tasks: Array,
@@ -121,7 +119,7 @@ function cycleGlareColor() {
       @mouseleave="resetRotation"
       >
       <h1>Todo board</h1>
-      <img class="logo" :src="logoImg" alt="Logo" @click="cycleGlareColor"/>
+      <img class="logo" src="./logo.png" alt="logo" @click="cycleGlareColor"/>
       <div class="task-list">
         <p
           v-for="task in tasks"
@@ -146,7 +144,7 @@ function cycleGlareColor() {
             :style="{ transform: `rotate(${positions[task.id]?.rotation || '0deg'}) translate(-50%, -50%)` }"
             >
             <div>
-                <img :src="brushImg" alt="brush" />
+                <img src="./brush.png" alt="brush" />
             </div>
         </div>
           <button
@@ -293,10 +291,11 @@ function cycleGlareColor() {
         top: calc(50% - 7px);
         right: -25px;
         background: transparent;
-        background-image: url("/src/assets/images/cross.png");
+        background-image: url("./cross.png");
         background-size: cover;
         height: 15px;
         width: 15px;
+        filter: invert(1);
         border: none;
         color: white;
         font-size: 1.2rem;
