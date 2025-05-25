@@ -36,7 +36,7 @@ function deleteTask(index) {
       <form @submit.prevent="addTask" class="form">
         <input v-model="newTask" type="text" placeholder="New task" />
         <button type="submit">
-          <img src="./send.png" alt="send" />
+          <img src="./Images/send.png" alt="send" />
         </button>
       </form>
     </TaskBoard>

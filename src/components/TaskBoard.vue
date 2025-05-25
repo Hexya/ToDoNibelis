@@ -119,7 +119,7 @@ function cycleGlareColor() {
       @mouseleave="resetRotation"
       >
       <h1>Todo board</h1>
-      <img class="logo" src="./Logo.png" alt="logo" @click="cycleGlareColor"/>
+      <img class="logo" src="./images/logo.png" alt="logo" @click="cycleGlareColor"/>
       <div class="task-list">
         <p
           v-for="task in tasks"
@@ -144,7 +144,7 @@ function cycleGlareColor() {
             :style="{ transform: `rotate(${positions[task.id]?.rotation || '0deg'}) translate(-50%, -50%)` }"
             >
             <div>
-                <img src="./brush.png" alt="brush" />
+                <img src="./Images/brush.png" alt="brush" />
             </div>
         </div>
           <button
@@ -291,13 +291,11 @@ function cycleGlareColor() {
         top: calc(50% - 7px);
         right: -25px;
         background: transparent;
-        background-image: url("./cross.png");
+        background-image: url("./Images/cross.png");
         background-size: cover;
         height: 15px;
         width: 15px;
-        filter: invert(1);
         border: none;
-        color: white;
         font-size: 1.2rem;
         cursor: pointer;
         transition: transform 0.2s, opacity 0.25s;
