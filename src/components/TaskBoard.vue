@@ -119,7 +119,7 @@ function cycleGlareColor() {
       @mouseleave="resetRotation"
       >
       <h1>Todo board</h1>
-      <img class="logo" src="./logo.png" alt="logo" @click="cycleGlareColor"/>
+      <img class="logo" src="./Logo.png" alt="logo" @click="cycleGlareColor"/>
       <div class="task-list">
         <p
           v-for="task in tasks"
