@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, watch } from "vue";
 import TaskBoard from "./TaskBoard.vue";
 
 // ADD A UNIQUE ID
@@ -9,6 +9,23 @@ function generateId() {
 
 const newTask = ref("");
 const tasks = ref([]);
+
+// LOAD TASK FROM LOCALSTORAGE
+onMounted(() => {
+  const savedTasks = localStorage.getItem("tasks");
+  if (savedTasks) {
+    tasks.value = JSON.parse(savedTasks);
+  }
+});
+
+// SAVE TASK IN LOCALSTORAGE
+watch(
+  tasks,
+  (newTasks) => {
+    localStorage.setItem("tasks", JSON.stringify(newTasks));
+  },
+  { deep: true }
+);
 
 function addTask() {
   if (newTask.value.trim() !== "") {
